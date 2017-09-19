@@ -15,18 +15,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final EditText miTexto= (EditText)findViewById(R.id.miTxt);
-        final Button miBoton= (Button)findViewById(R.id.miBtn);
-        final TextView elSaludo= (TextView)findViewById(R.id.miLbl);
+        // final TextView mensajeIni;
+        final EditText miTexto = (EditText) findViewById(R.id.miTxt);
+        final Button miBoton = (Button) findViewById(R.id.miBtn);
+        final TextView elSaludo = (TextView) findViewById(R.id.miLbl);
 
-
-        miBoton.setOnClickListener( new View.OnClickListener(){
-            public void onClick(View v){
-                Intent miIntent = new Intent(MainActivity.this, MainActivity.class);
-                String mensajePaso= "Te saludo " + miTexto.getText();
-                elSaludo.setText(mensajePaso);
-                startActivity(miIntent);
+        //Borrar el texto inicial del EditText
+        miTexto.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                miTexto.setText("");
             }
+        });
+
+        miBoton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                String mensajeSaludo = "Te saludo " + miTexto.getText();
+                elSaludo.setText(mensajeSaludo.toUpperCase());
+            }
+
         });
     }
 }
