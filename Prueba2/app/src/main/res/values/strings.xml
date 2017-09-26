@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Prueba1</string>
+    <string name="app_name">Prueba2</string>
     <string name="saludo">Programa para saludar..</string>
     <string name="escribe">Escribe tu nombre</string>
     <string name="pulsar">SALUDAR</string>
