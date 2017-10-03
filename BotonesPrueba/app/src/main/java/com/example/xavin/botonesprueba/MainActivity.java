@@ -1,6 +1,5 @@
 package com.example.xavin.botonesprueba;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         final Button button2 = (Button)findViewById(R.id.button2);
         final Button button3 = (Button)findViewById(R.id.button3);
         final Button button4 = (Button)findViewById(R.id.button4);
+        final Button button5 = (Button)findViewById(R.id.button5);
 
 
 

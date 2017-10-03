@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.xavin.pruebacheckbox.MainActivity">
+
+    <CheckBox
+        android:text="Cycling"
+        android:id="@+id/chkBoxCycling"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </CheckBox>
+
+    <CheckBox
+        android:text="Teaching"
+        android:id="@+id/chkBoxTeaching"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </CheckBox>
+
+    <CheckBox
+        android:text="Blogging"
+        android:id="@+id/chkBoxBlogging"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </CheckBox>
+
+    <Button
+        android:text="Get Hobby"
+        android:id="@+id/btnHobby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+    </Button>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtHobby"
+        android:text="@string/hobby">
+
+    </TextView>
+
+</android.support.constraint.ConstraintLayout>
