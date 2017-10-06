@@ -27,7 +27,7 @@ public class RadioBtn extends AppCompatActivity {
                 startActivity(miIntent);
             }
         });
-        
+
 
         rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup group, int checkedId) {

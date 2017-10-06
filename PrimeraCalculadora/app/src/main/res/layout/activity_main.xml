@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.xavin.primeracalculadora.MainActivity">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Operando"
+        android:textSize="18sp"
+        android:id="@+id/txtview1"/>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/operando1"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Operando"
+        android:textSize="18sp"
+        android:id="@+id/txtview2"/>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/operando2"/>
+
+    <RadioGroup
+        android:layout_width="178dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg">
+
+        <RadioButton
+            android:id="@+id/suma"
+            android:layout_width="97dp"
+            android:layout_height="wrap_content"
+            android:text="Suma"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/resta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resta"
+            android:textSize="14sp" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/Calcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="resultado"
+        android:text="Calcular" />
+
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Resultado: "
+        android:textSize="24sp"
+        tools:fontFamily="sans-serif" />
+
+</LinearLayout>
