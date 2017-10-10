@@ -15,9 +15,10 @@
         android:id="@+id/txtview1"/>
 
     <EditText
+        android:id="@+id/operando1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/operando1"/>
+        android:inputType="number" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -27,9 +28,10 @@
         android:id="@+id/txtview2"/>
 
     <EditText
+        android:id="@+id/operando2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/operando2"/>
+        android:inputType="number" />
 
     <RadioGroup
         android:layout_width="178dp"

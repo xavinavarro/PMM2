@@ -19,10 +19,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        operando1=(EditText)findViewById(R.id.operando1);
-        operando2=(EditText)findViewById(R.id.operando2);
-        resultado=(TextView)findViewById(R.id.resultado);
-        rg=(RadioGroup)findViewById(R.id.rg);
+        operando1 = (EditText)findViewById(R.id.operando1);
+        operando2 = (EditText)findViewById(R.id.operando2);
+        resultado = (TextView)findViewById(R.id.resultado);
+        rg = (RadioGroup)findViewById(R.id.rg);
     }
 
     public void resultado(View view){
