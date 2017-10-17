@@ -34,9 +34,11 @@
         android:inputType="number" />
 
     <RadioGroup
-        android:layout_width="178dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:id="@+id/rg">
+
 
         <RadioButton
             android:id="@+id/suma"
@@ -52,7 +54,12 @@
             android:text="Resta"
             android:textSize="14sp" />
 
+
+
     </RadioGroup>
+
+
+
 
     <Button
         android:id="@+id/Calcular"
