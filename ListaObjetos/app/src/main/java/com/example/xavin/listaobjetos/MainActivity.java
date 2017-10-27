@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         ListView istOpciones = (ListView) findViewById(R.id.LstOpciones);
         istOpciones.setAdapter(adaptador);
 
+        //Toast
         istOpciones.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             public void onItemClick(AdapterView arg0, View arg1, int posicion, long id){
                 String mensaje = "Nombre: " + datos[posicion].getNombre() + ". Serie: " +datos[posicion].getSerie();

@@ -7,8 +7,9 @@
 
     <ImageView
         android:id="@+id/ivImagen"
-        android:layout_width="150dp"
-        android:layout_height="200dp" />
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"

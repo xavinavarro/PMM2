@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.xavin.objetosentrepantallas.MainActivity">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tViewNombre"
+            android:text="Nombre :"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/eTextNombre"
+            android:layout_width="200dp"
+            android:hint="(Ej: Pepe)" />
+
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/tViewApellidos"
+            android:text="Apellidos :"
+            android:textSize="18sp" />
+        <EditText
+            android:hint="(Ej: Martinez Gonzalez)"
+            android:id="@+id/eTextApellido"/>/>
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:text="Edad :"
+            android:textSize="18sp" />
+        <EditText
+            android:inputType="number"
+            android:id="@+id/iTypeEdad"/>
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:text="Sexo :"
+            android:textSize="18sp" />
+        <RadioGroup
+            android:orientation="horizontal"
+            android:id="@+id/rGroupSexo">
+            <RadioButton
+                android:id="@+id/rbuttonH"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Masculino"/>
+
+            <RadioButton
+                android:id="@+id/rbuttonF"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Femenino" />
+
+        </RadioGroup>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="20pt"
+        android:gravity="right">
+
+        <Button
+            android:id="@+id/btnSiguiente"
+            android:text="Siguiente" />
+    </TableRow>
+
+</TableLayout>
