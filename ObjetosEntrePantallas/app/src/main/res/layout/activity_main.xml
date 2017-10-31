@@ -13,7 +13,7 @@
 
         <TextView
             android:id="@+id/tViewNombre"
-            android:text="Nombre :"
+            android:text=" Nombre :"
             android:textSize="18sp" />
 
         <EditText
@@ -26,7 +26,7 @@
     <TableRow>
         <TextView
             android:id="@+id/tViewApellidos"
-            android:text="Apellidos :"
+            android:text=" Apellidos :"
             android:textSize="18sp" />
         <EditText
             android:hint="(Ej: Martinez Gonzalez)"
@@ -36,7 +36,7 @@
     <TableRow>
 
         <TextView
-            android:text="Edad :"
+            android:text=" Edad :"
             android:textSize="18sp" />
         <EditText
             android:inputType="number"
@@ -46,7 +46,7 @@
     <TableRow>
 
         <TextView
-            android:text="Sexo :"
+            android:text=" Sexo :"
             android:textSize="18sp" />
         <RadioGroup
             android:orientation="horizontal"
