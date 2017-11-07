@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FigurasAleatorias</string>
+    <string name="shape1label">Shape 1</string>
+    <string name="shape1label2">Click para generar</string>
+    <string name="shape2label">Shape 2</string>
+    <string name="shape2label2">Click para generar</string>
+</resources>
