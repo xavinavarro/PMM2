@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.xavin.examen1_xavinavarro.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¡¡ PIZZERIA ONLINE !!"
+        android:textSize="24sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="28dp" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="300dp"
+        android:src="@drawable/logopizza"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/caja_masingred"
+        android:layout_marginStart="24dp"
+        android:id="@+id/imageView" />
+
+    <CheckBox
+        android:text="+ Ingred."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/caja_masingred"
+        android:layout_marginStart="25dp"
+        android:layout_below="@+id/radio_grupo"
+        android:layout_toEndOf="@+id/caja_masgrande" />
+
+    <RadioGroup
+        android:id="@+id/radio_grupo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner"
+        android:layout_alignParentStart="true">
+
+        <RadioButton
+            android:id="@+id/enlocal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:text="En local" />
+
+        <RadioButton
+            android:id="@+id/enviodomicilio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinner"
+            android:layout_marginLeft="200dp"
+            android:text="Envio Domicilio" />
+
+    </RadioGroup>
+
+    <Button
+        android:text="Ver factura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="130dp"
+        android:id="@+id/boton_calcular"
+        android:layout_below="@+id/texto_cantidad"
+        android:layout_centerHorizontal="true" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView" />
+
+    <CheckBox
+        android:text="+ Grande"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/caja_masgrande"
+        android:layout_below="@+id/radio_grupo"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Numero de Unidades:"
+        android:id="@+id/texto_cantidad"
+        android:layout_below="@+id/caja_extraqueso"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:text="Extra Queso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/caja_extraqueso"
+        android:layout_below="@+id/caja_masgrande"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="Total Pedido"
+        android:layout_below="@+id/boton_calcular"/>
+
+
+</RelativeLayout>
