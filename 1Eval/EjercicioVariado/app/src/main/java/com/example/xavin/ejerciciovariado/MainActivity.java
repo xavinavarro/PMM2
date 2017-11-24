@@ -37,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //@Override protected void onCreate(){
+    //    super.onCreate();
+    //    Toast.makeText(this, "onCreate",Toast.LENGTH_SHORT).show();
+   // }
+
     @Override protected void onStart(){
         super.onStart();
         Toast.makeText(this, "onStart",Toast.LENGTH_SHORT).show();
