@@ -46,8 +46,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        //CREAMOS LA LISTA DE OBJETOS DEL SPINNER
         final RadioButton enviodomicilio = (RadioButton) findViewById(R.id.enviodomicilio);
         final RadioButton enlocal = (RadioButton) findViewById(R.id.enlocal);
         final RadioGroup grupo = (RadioGroup) findViewById(R.id.radio_grupo);
@@ -140,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
                 ventana.putExtra("boolean1", selected1);
                 ventana.putExtra("boolean2", selected2);
                 ventana.putExtra("boolean3", selected3);
-                ventana.putExtra("caja_aire", caja_masgrande.getText().toString());
+                ventana.putExtra("caja_masgrande", caja_masgrande.getText().toString());
                 ventana.putExtra("caja_masingred", caja_masingred.getText().toString());
                 ventana.putExtra("caja_extraqueso", caja_extraqueso.getText().toString());
                 objeto.putSerializable("informacion", datos);
@@ -150,7 +148,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         final Spinner spinner = (Spinner) findViewById(R.id.spinner);
-
 
         Adaptador adaptador = new Adaptador(this);
         spinner.setAdapter(adaptador);
@@ -167,7 +164,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    //MENU ACERCA DE Y DIBUJAR
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflate = getMenuInflater();
         inflate.inflate(R.menu.menu, menu);
