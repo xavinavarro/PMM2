@@ -19,4 +19,3 @@ public class MainActivity extends AppCompatActivity {
         mi_transicion.startTransition(2000);
     }
 }
-
