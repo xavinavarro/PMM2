@@ -14,7 +14,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //Obtenemos el recurso creado en animacion.xml
         animacion = (AnimationDrawable) getResources().getDrawable(R.anim.animacion);
+
         //Creamos una vista que contendrá una imagen
+
         ImageView imagen = new ImageView(this);
         imagen.setBackgroundColor(Color.WHITE); //Le ponemos color de fondo
         imagen.setImageDrawable(animacion); //Cargamos una animación.
