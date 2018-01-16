@@ -1,12 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.xavin.proyectobasedatos.MainActivity">
 
+    <TextView
+        android:id="@+id/lblIdentificacion"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="12dp"
+        android:gravity="left|center_vertical"
+        android:text="Identificación: " />
+
+    <EditText
+        android:id="@+id/editIdentificacion"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/lblIdentificacion"
+        android:layout_toRightOf="@+id/lblIdentificacion" />
+
+    <TextView
+        android:id="@+id/lblNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/lblIdentificacion"
+        android:layout_below="@+id/lblIdentificacion"
+        android:gravity="left|center_vertical"
+        android:text="Nombre: " />
+
+    <EditText
+        android:id="@+id/editNombre"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_alignTop="@+id/lblNombre"
+        android:layout_toEndOf="@+id/lblIdentificacion" />
+
+    <TextView
+        android:id="@+id/lblApellidos"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/lblNombre"
+        android:layout_below="@+id/lblNombre"
+        android:gravity="left|center_vertical"
+        android:text="Apellidos: " />
+
+    <EditText
+        android:id="@+id/editApellidos"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@+id/lblApellidos"
+        android:layout_alignBottom="@+id/lblApellidos"
+        android:layout_alignStart="@+id/editNombre" />
 
 
-</LinearLayout>
+</RelativeLayout>
