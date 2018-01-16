@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class ClientesSQLiteHelper extends SQLiteOpenHelper {
-
     //Cadena con la sentencia SQL que permite crear la tabla Clientes
     String cadSQL = "CREATE TABLE Clientes (codigo INTEGER, nombre TEXT, telefono TEXT)";
 
