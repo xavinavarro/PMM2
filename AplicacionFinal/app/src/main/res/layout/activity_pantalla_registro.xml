@@ -9,7 +9,6 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     android:orientation="vertical"
-    tools:context="xavin.aplicacionfinal.PantallaRegistro"
     android:weightSum="1">
 
     <TextView

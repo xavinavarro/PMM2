@@ -2,8 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/idframe"
-    tools:context="xavin.aplicacionfinal.FragmentComics">
+    android:id="@+id/idframe">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -44,7 +43,6 @@
                 android:layout_height="47dp"
                 android:text="Extras: "
                 android:id="@+id/extras"/>
-
 
         </LinearLayout>
 

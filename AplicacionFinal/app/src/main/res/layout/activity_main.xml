@@ -10,7 +10,7 @@
     android:paddingTop="16dp"
     android:orientation="vertical"
     android:background="@drawable/sky"
-    tools:context="xavin.aplicacionfinal.PantallaRegistro">
+    >
 
     <TextView
         android:text="Usuario"
