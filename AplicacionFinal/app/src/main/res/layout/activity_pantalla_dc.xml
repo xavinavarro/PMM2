@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_pantalla_dc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        app:srcCompat="@drawable/dc1"
+        android:layout_marginTop="11dp"
+        android:id="@+id/imageDC"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_height="250px" />
+
+    <CheckBox
+        android:text="Para regalo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="22dp"
+        android:id="@+id/regalo"
+        android:layout_below="@+id/imageDC"
+        android:layout_marginTop="370px"
+        android:layout_alignParentEnd="true" />
+
+    <CheckBox
+        android:text="Subscripción"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/subscripcion"
+        android:layout_below="@+id/regalo"
+        android:layout_alignStart="@+id/regalo" />
+
+    <CheckBox
+        android:text="Figura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/figura"
+        android:layout_below="@+id/subscripcion"
+        android:layout_alignStart="@+id/subscripcion" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerDC"
+        android:layout_below="@+id/imageDC"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="45dp" />
+
+
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:id="@+id/radioGroup"
+        android:layout_alignTop="@+id/regalo"
+        android:layout_alignParentStart="true">
+
+        <RadioButton
+            android:text="Efectivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/efectivo"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="PayPal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/paypal"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Tarjeta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tarjeta"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+    <Button
+        android:text="VOLVER"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/BotonVolver"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/radioGroup"
+        android:layout_marginBottom="20dp" />
+    <Button
+        android:text="COMPRAR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/botonCompra"
+        android:layout_alignBaseline="@+id/BotonVolver"
+        android:layout_alignBottom="@+id/BotonVolver"
+        android:layout_alignStart="@+id/figura" />
+
+</RelativeLayout>

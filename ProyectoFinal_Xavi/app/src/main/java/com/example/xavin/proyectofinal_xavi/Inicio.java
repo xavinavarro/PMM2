@@ -6,21 +6,14 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class Inicio extends AppCompatActivity {
@@ -43,7 +36,6 @@ public class Inicio extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
 
-
         final RadioButton RBEco = (RadioButton) findViewById(R.id.RBEcologico);
         final RadioButton RBDeluze = (RadioButton) findViewById(R.id.RBDeluxe);
         final RadioButton RBSensor = (RadioButton) findViewById(R.id.RBSensor);
@@ -60,7 +52,6 @@ public class Inicio extends AppCompatActivity {
 
                 posibilidad = "Linea Ecológica";
                 precioP = 10;
-
             }
         });
 
@@ -70,7 +61,6 @@ public class Inicio extends AppCompatActivity {
 
                 posibilidad = "Linea Deluxe";
                 precioP = 1;
-
             }
         });
 
@@ -80,7 +70,6 @@ public class Inicio extends AppCompatActivity {
 
                 posibilidad = "Linea Sensorial";
                 precioP = 10;
-
             }
         });
 
@@ -90,7 +79,6 @@ public class Inicio extends AppCompatActivity {
 
                 precioMascarilla = 7;
                 precioE += precioMascarilla;
-
             }
         });
 
@@ -194,44 +182,16 @@ public class Inicio extends AppCompatActivity {
                     SQLiteDatabase db=basedatos.getWritableDatabase();
 
                     // Spinner de tratamientos
-
-
                 }
 
                 @Override
                 public void onNothingSelected(AdapterView<?> adapterView) {
-
                 }
             });
 
             db.close();
         }
-
-
-
-
         // Menu Acerca De y Información
-
-        /**    public boolean onCreateOptionsMenu (Menu menu){
-         MenuInflater inflater = getMenuInflater();
-         inflater.inflate(R.menu.activity_menu, menu);
-         return true;
-         }
-         public boolean onOptionItemSelected(MenuItem item){
-         switch(item.getItemId()){
-         case R.id.acerca:
-         Intent acerca = new Intent(Inicio.this, acercade.class);
-         startActivity(acerca);
-         return true;
-         case R.id.informacion:
-         Intent info = new Intent(Inicio.this, informacion.class);
-         startActivity(info);
-         return true;
-         default:
-         return super.onOptionsItemSelected(item);
-         }
-         }
-         **/
     }
 
     public class AdaptadorTratamientos extends ArrayAdapter {
@@ -242,7 +202,6 @@ public class Inicio extends AppCompatActivity {
 
             super(context, R.layout.activity_tratamiento, datos);
             this.context = context;
-
         }
 
         public View getDropDownView(int position, View convertView, ViewGroup parent) {
@@ -250,20 +209,5 @@ public class Inicio extends AppCompatActivity {
             View vistaDesplegada = getView(position, convertView, parent);
             return vistaDesplegada;
         }
-
-        /**public View getView(int i, View convertView, ViewGroup parent) {
-
-         LayoutInflater inflater = context.getLayoutInflater();
-         View item = inflater.inflate(R.layout.activity_marca, null);
-
-
-         TextView marca = (TextView) item.findViewById(R.id.marca);
-         marca.setText(dades[i].getModel());
-
-
-         return (item);
-         }*/
     }
-
-
 }
