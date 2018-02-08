@@ -9,7 +9,7 @@ package com.example.xavin.aplicacionfinal;
         import android.widget.EditText;
 
 
-public class PantallaRegistro extends AppCompatActivity {
+public class Registro extends AppCompatActivity {
     private UsuarioSQLiteHelper usuarioSQLiteHelper;
 
     @Override
@@ -29,14 +29,14 @@ public class PantallaRegistro extends AppCompatActivity {
                 SQLiteDatabase bd = usuarioSQLiteHelper.getWritableDatabase();
                 bd.execSQL("INSERT INTO Usuarios(nombre, password) values('"+RegistroNombre.getText().toString()+"','"+RegistroPassword.getText().toString()+"')");
                 bd.close();
-                Intent volver = new Intent(PantallaRegistro.this, MainActivity.class);
+                Intent volver = new Intent(Registro.this, MainActivity.class);
                 startActivity(volver);
             }
         });
         BotonVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent volver = new Intent(PantallaRegistro.this, MainActivity.class);
+                Intent volver = new Intent(Registro.this, MainActivity.class);
                 startActivity(volver);
             }
         });

@@ -16,16 +16,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PantallaDC" />
-        <activity android:name=".PantallaEuropeo" />
+        <activity android:name=".DetectiveComics" />
+        <activity android:name=".ComicsEuropeos" />
         <activity android:name=".FragmentComics" />
         <activity android:name=".Comic" />
         <activity android:name=".Aplicacion" />
         <activity android:name=".Web" />
-        <activity android:name=".PantallaRegistro" />
-        <activity android:name=".PantallaMarvel" />
-        <activity android:name=".PantallaManga" />
-        <activity android:name=".PantallaClasicos" />
+        <activity android:name=".Registro" />
+        <activity android:name=".Marvel" />
+        <activity android:name=".Mangas" />
+        <activity android:name=".ComicsClasicos" />
         <activity android:name=".AcercaDe"></activity>
     </application>
 

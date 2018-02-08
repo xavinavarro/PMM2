@@ -1,30 +1,30 @@
 package com.example.xavin.aplicacionfinal;
 
-    import android.app.Activity;
-    import android.app.FragmentManager;
-    import android.app.FragmentTransaction;
-    import android.content.Intent;
-    import android.database.Cursor;
-    import android.database.sqlite.SQLiteDatabase;
-    import android.net.Uri;
-    import android.support.v7.app.AppCompatActivity;
-    import android.os.Bundle;
-    import android.view.LayoutInflater;
-    import android.view.View;
-    import android.view.ViewGroup;
-    import android.widget.AdapterView;
-    import android.widget.ArrayAdapter;
-    import android.widget.Button;
-    import android.widget.CheckBox;
-    import android.widget.RadioButton;
-    import android.widget.RadioGroup;
-    import android.widget.Spinner;
-    import android.widget.TextView;
-    import android.widget.Toast;
-    import java.util.ArrayList;
-    import static android.R.attr.fragment;
+        import android.app.Activity;
+        import android.app.FragmentManager;
+        import android.app.FragmentTransaction;
+        import android.content.Intent;
+        import android.database.Cursor;
+        import android.database.sqlite.SQLiteDatabase;
+        import android.net.Uri;
+        import android.support.v7.app.AppCompatActivity;
+        import android.os.Bundle;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.AdapterView;
+        import android.widget.ArrayAdapter;
+        import android.widget.Button;
+        import android.widget.CheckBox;
+        import android.widget.RadioButton;
+        import android.widget.RadioGroup;
+        import android.widget.Spinner;
+        import android.widget.TextView;
+        import android.widget.Toast;
 
-public class PantallaManga extends AppCompatActivity implements FragmentComics.OnFragmentInteractionListener {
+        import java.util.ArrayList;
+
+public class ComicsEuropeos extends AppCompatActivity implements FragmentComics.OnFragmentInteractionListener {
     private UsuarioSQLiteHelper usuarioCli;
     private Comic []comics;
 
@@ -33,11 +33,11 @@ public class PantallaManga extends AppCompatActivity implements FragmentComics.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pantalla_manga);
+        setContentView(R.layout.activity_pantalla_europeo);
 
         usuarioCli = new UsuarioSQLiteHelper(this, "BDUsuario", null, 1);
         SQLiteDatabase bd = usuarioCli.getWritableDatabase();
-        bd.execSQL("INSERT INTO Comics (Titulo, Genero, Precio) VALUES ('One Piece ','Acción','20.95€')");
+        bd.execSQL("INSERT INTO Comics (Titulo, Genero, Precio) VALUES ('Deadpool','Políciaco','39.95€')");
         bd.execSQL("INSERT INTO Comics (Titulo, Genero, Precio) VALUES ('Dragon Ball','Aventura','2.95€')");
 
         Toast.makeText(getApplicationContext(),"completado",Toast.LENGTH_LONG).show();
@@ -62,10 +62,10 @@ public class PantallaManga extends AppCompatActivity implements FragmentComics.O
         }
 
         AdaptadorComics adaptador = new AdaptadorComics(this);
-        final Spinner spinnerManga = (Spinner) findViewById(R.id.spinnerManga);
-        spinnerManga.setAdapter(adaptador);
+        final Spinner spinnerEuropeo = (Spinner) findViewById(R.id.spinnerEuropeo);
+        spinnerEuropeo.setAdapter(adaptador);
 
-        spinnerManga.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinnerEuropeo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView arg0, View arg1, int position, long id) {
                 String mensaje = "Titulo: " + comics[position].getTitulo() + ", Genero: " + comics[position].getGenero()+ ", Precio: " +comics[position].getPrecio();
@@ -82,7 +82,7 @@ public class PantallaManga extends AppCompatActivity implements FragmentComics.O
         BotonVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent volver = new Intent(PantallaManga.this, Aplicacion.class);
+                Intent volver = new Intent(ComicsEuropeos.this, Aplicacion.class);
                 startActivity(volver);
             }
         });
@@ -92,16 +92,14 @@ public class PantallaManga extends AppCompatActivity implements FragmentComics.O
         //Paso de la info de compra al fragment
         BotonCompra.setOnClickListener(new View.OnClickListener() {
 
-
             Bundle objetos= new Bundle();
 
             @Override
             public void onClick(View view) {
 
-
-                Comic comicDatos = new Comic(comics[spinnerManga.getSelectedItemPosition()].getTitulo(),
-                        comics[spinnerManga.getSelectedItemPosition()].getGenero(),
-                        comics[spinnerManga.getSelectedItemPosition()].getPrecio());
+                Comic comicDatos = new Comic(comics[spinnerEuropeo.getSelectedItemPosition()].getTitulo(),
+                        comics[spinnerEuropeo.getSelectedItemPosition()].getGenero(),
+                        comics[spinnerEuropeo.getSelectedItemPosition()].getPrecio());
                 objetos.putSerializable("informacion", comicDatos);
 
                 CheckBox box1 = (CheckBox) findViewById(R.id.regalo);
@@ -134,7 +132,7 @@ public class PantallaManga extends AppCompatActivity implements FragmentComics.O
                     selected3 = true;
                 }
                 objetos.putBoolean("boolean3",selected3);
-                objetos.putString("figura",box3.getText().toString());
+                objetos.putString("figura",box2.getText().toString());
 
                 if (radioGroup.getCheckedRadioButtonId()==R.id.efectivo){
                     objetos.putString("grupo",efectivo.getText().toString());
@@ -151,9 +149,7 @@ public class PantallaManga extends AppCompatActivity implements FragmentComics.O
                 box3.setVisibility(View.INVISIBLE);
                 BotonCompra.setVisibility(View.INVISIBLE);
                 BotonVolver.setVisibility(View.INVISIBLE);
-                spinnerManga.setVisibility(View.INVISIBLE);
-
-
+                spinnerEuropeo.setVisibility(View.INVISIBLE);
 
                 FragmentManager fragmentmanager =getFragmentManager();
 
@@ -162,15 +158,12 @@ public class PantallaManga extends AppCompatActivity implements FragmentComics.O
                 FragmentComics fragment= new FragmentComics();
                 fragment.setArguments(objetos);
 
-                transaction.add(R.id.activity_pantalla_manga,fragment);
+                transaction.add(R.id.activity_pantalla_europeo,fragment);
 
                 transaction.commit();
 
             }
-
         });
-
-
     }
 
     public class AdaptadorComics extends ArrayAdapter {
@@ -208,8 +201,5 @@ public class PantallaManga extends AppCompatActivity implements FragmentComics.O
     }
     @Override
     public void onFragmentInteraction(Uri uri) {
-
     }
-
 }
-

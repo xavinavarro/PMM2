@@ -6,7 +6,6 @@ package com.example.xavin.aplicacionfinal;
         import android.os.Bundle;
         import android.view.View;
         import android.widget.Button;
-        import android.widget.EditText;
 
 public class Aplicacion extends AppCompatActivity {
 
@@ -26,7 +25,7 @@ public class Aplicacion extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //crear el enlace que al pulsar el boton vaya a registro
-                Intent irDC = new Intent(Aplicacion.this, PantallaDC.class);
+                Intent irDC = new Intent(Aplicacion.this, DetectiveComics.class);
                 startActivity(irDC);
 
             }
@@ -35,7 +34,7 @@ public class Aplicacion extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //crear el enlace que al pulsar el boton vaya a registro
-                Intent irMarvel = new Intent(Aplicacion.this, PantallaMarvel.class);
+                Intent irMarvel = new Intent(Aplicacion.this, Marvel.class);
                 startActivity(irMarvel);
 
             }
@@ -44,7 +43,7 @@ public class Aplicacion extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //crear el enlace que al pulsar el boton vaya a registro
-                Intent irManga = new Intent(Aplicacion.this, PantallaManga.class);
+                Intent irManga = new Intent(Aplicacion.this, Mangas.class);
                 startActivity(irManga);
 
             }
@@ -53,7 +52,7 @@ public class Aplicacion extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //crear el enlace que al pulsar el boton vaya a registro
-                Intent irEuropeo = new Intent(Aplicacion.this, PantallaEuropeo.class);
+                Intent irEuropeo = new Intent(Aplicacion.this, ComicsEuropeos.class);
                 startActivity(irEuropeo);
 
             }
@@ -71,7 +70,7 @@ public class Aplicacion extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //crear el enlace que al pulsar el boton vaya a registro
-                Intent irClasicos = new Intent(Aplicacion.this, PantallaClasicos.class);
+                Intent irClasicos = new Intent(Aplicacion.this, ComicsClasicos.class);
                 startActivity(irClasicos);
 
             }

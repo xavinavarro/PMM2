@@ -21,10 +21,10 @@ package com.example.xavin.aplicacionfinal;
     import android.widget.Spinner;
     import android.widget.TextView;
     import android.widget.Toast;
-    import java.util.ArrayList;
-    import static android.R.attr.fragment;
 
-public class PantallaClasicos extends AppCompatActivity implements FragmentComics.OnFragmentInteractionListener {
+    import java.util.ArrayList;
+
+public class Marvel extends AppCompatActivity implements FragmentComics.OnFragmentInteractionListener {
     private UsuarioSQLiteHelper usuarioCli;
     private Comic []comics;
 
@@ -33,12 +33,12 @@ public class PantallaClasicos extends AppCompatActivity implements FragmentComic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pantalla_clasicos);
+        setContentView(R.layout.activity_pantalla_marvel);
 
         usuarioCli = new UsuarioSQLiteHelper(this, "BDUsuario", null, 1);
         SQLiteDatabase bd = usuarioCli.getWritableDatabase();
-        bd.execSQL("INSERT INTO Comics (Titulo, Genero, Precio) VALUES ('Dragon Ball Z','Aventuras','9.95€')");
-        bd.execSQL("INSERT INTO Comics (Titulo, Genero, Precio) VALUES ('Dragon Ball','Aventura','2.95€')");
+        bd.execSQL("INSERT INTO Comics (Titulo, Genero, Precio) VALUES ('Iron Man','Aventura','7.95€')");
+        bd.execSQL("INSERT INTO Comics (Titulo, Genero, Precio) VALUES ('Capitán América','Acción','12.95€')");
 
         Toast.makeText(getApplicationContext(),"completado",Toast.LENGTH_LONG).show();
 
@@ -55,17 +55,16 @@ public class PantallaClasicos extends AppCompatActivity implements FragmentComic
                 Double precio = c.getDouble(2);
 
                 comics[i] = new Comic(titulo, genero, precio);
-
                 i++;
 
             } while (c.moveToNext());
         }
 
         AdaptadorComics adaptador = new AdaptadorComics(this);
-        final Spinner spinnerClasicos = (Spinner) findViewById(R.id.spinnerClasicos);
-        spinnerClasicos.setAdapter(adaptador);
+        final Spinner spinnerMarvel = (Spinner) findViewById(R.id.spinnerMarvel);
+        spinnerMarvel.setAdapter(adaptador);
 
-        spinnerClasicos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinnerMarvel.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView arg0, View arg1, int position, long id) {
                 String mensaje = "Titulo: " + comics[position].getTitulo() + ", Genero: " + comics[position].getGenero()+ ", Precio: " +comics[position].getPrecio();
@@ -82,7 +81,7 @@ public class PantallaClasicos extends AppCompatActivity implements FragmentComic
         BotonVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent volver = new Intent(PantallaClasicos.this, Aplicacion.class);
+                Intent volver = new Intent(Marvel.this, Aplicacion.class);
                 startActivity(volver);
             }
         });
@@ -92,16 +91,14 @@ public class PantallaClasicos extends AppCompatActivity implements FragmentComic
         //Paso de la info de compra al fragment
         BotonCompra.setOnClickListener(new View.OnClickListener() {
 
-
             Bundle objetos= new Bundle();
 
             @Override
             public void onClick(View view) {
 
-
-                Comic comicDatos = new Comic(comics[spinnerClasicos.getSelectedItemPosition()].getTitulo(),
-                        comics[spinnerClasicos.getSelectedItemPosition()].getGenero(),
-                        comics[spinnerClasicos.getSelectedItemPosition()].getPrecio());
+                Comic comicDatos = new Comic(comics[spinnerMarvel.getSelectedItemPosition()].getTitulo(),
+                        comics[spinnerMarvel.getSelectedItemPosition()].getGenero(),
+                        comics[spinnerMarvel.getSelectedItemPosition()].getPrecio());
                 objetos.putSerializable("informacion", comicDatos);
 
                 CheckBox box1 = (CheckBox) findViewById(R.id.regalo);
@@ -151,7 +148,7 @@ public class PantallaClasicos extends AppCompatActivity implements FragmentComic
                 box3.setVisibility(View.INVISIBLE);
                 BotonCompra.setVisibility(View.INVISIBLE);
                 BotonVolver.setVisibility(View.INVISIBLE);
-                spinnerClasicos.setVisibility(View.INVISIBLE);
+                spinnerMarvel.setVisibility(View.INVISIBLE);
 
                 FragmentManager fragmentmanager =getFragmentManager();
 
@@ -160,7 +157,7 @@ public class PantallaClasicos extends AppCompatActivity implements FragmentComic
                 FragmentComics fragment= new FragmentComics();
                 fragment.setArguments(objetos);
 
-                transaction.add(R.id.activity_pantalla_clasicos,fragment);
+                transaction.add(R.id.activity_pantalla_marvel,fragment);
 
                 transaction.commit();
             }
@@ -202,6 +199,5 @@ public class PantallaClasicos extends AppCompatActivity implements FragmentComic
     }
     @Override
     public void onFragmentInteraction(Uri uri) {
-
     }
 }

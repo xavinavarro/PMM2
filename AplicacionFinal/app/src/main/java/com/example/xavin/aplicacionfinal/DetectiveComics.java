@@ -24,9 +24,7 @@ package com.example.xavin.aplicacionfinal;
 
         import java.util.ArrayList;
 
-        import static android.R.attr.fragment;
-
-public class PantallaEuropeo extends AppCompatActivity implements FragmentComics.OnFragmentInteractionListener {
+public class DetectiveComics extends AppCompatActivity implements FragmentComics.OnFragmentInteractionListener {
     private UsuarioSQLiteHelper usuarioCli;
     private Comic []comics;
 
@@ -35,12 +33,12 @@ public class PantallaEuropeo extends AppCompatActivity implements FragmentComics
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pantalla_europeo);
+        setContentView(R.layout.activity_pantalla_dc);
 
         usuarioCli = new UsuarioSQLiteHelper(this, "BDUsuario", null, 1);
         SQLiteDatabase bd = usuarioCli.getWritableDatabase();
-        bd.execSQL("INSERT INTO Comics (Titulo, Genero, Precio) VALUES ('Deadpool','Políciaco','39.95€')");
-        bd.execSQL("INSERT INTO Comics (Titulo, Genero, Precio) VALUES ('Dragon Ball','Aventura','2.95€')");
+        bd.execSQL("INSERT INTO Comics (Titulo, Genero, Precio) VALUES ('Batman AK','Aventura','14.95€')");
+        bd.execSQL("INSERT INTO Comics (Titulo, Genero, Precio) VALUES ('Superman returns','Acción','5.95€')");
 
         Toast.makeText(getApplicationContext(),"completado",Toast.LENGTH_LONG).show();
 
@@ -64,10 +62,10 @@ public class PantallaEuropeo extends AppCompatActivity implements FragmentComics
         }
 
         AdaptadorComics adaptador = new AdaptadorComics(this);
-        final Spinner spinnerEuropeo = (Spinner) findViewById(R.id.spinnerEuropeo);
-        spinnerEuropeo.setAdapter(adaptador);
+        final Spinner spinnerDC = (Spinner) findViewById(R.id.spinnerDC);
+        spinnerDC.setAdapter(adaptador);
 
-        spinnerEuropeo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinnerDC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView arg0, View arg1, int position, long id) {
                 String mensaje = "Titulo: " + comics[position].getTitulo() + ", Genero: " + comics[position].getGenero()+ ", Precio: " +comics[position].getPrecio();
@@ -84,7 +82,7 @@ public class PantallaEuropeo extends AppCompatActivity implements FragmentComics
         BotonVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent volver = new Intent(PantallaEuropeo.this, Aplicacion.class);
+                Intent volver = new Intent(DetectiveComics.this, Aplicacion.class);
                 startActivity(volver);
             }
         });
@@ -94,14 +92,16 @@ public class PantallaEuropeo extends AppCompatActivity implements FragmentComics
         //Paso de la info de compra al fragment
         BotonCompra.setOnClickListener(new View.OnClickListener() {
 
+
             Bundle objetos= new Bundle();
 
             @Override
             public void onClick(View view) {
 
-                Comic comicDatos = new Comic(comics[spinnerEuropeo.getSelectedItemPosition()].getTitulo(),
-                        comics[spinnerEuropeo.getSelectedItemPosition()].getGenero(),
-                        comics[spinnerEuropeo.getSelectedItemPosition()].getPrecio());
+
+                Comic comicDatos = new Comic(comics[spinnerDC.getSelectedItemPosition()].getTitulo(),
+                        comics[spinnerDC.getSelectedItemPosition()].getGenero(),
+                        comics[spinnerDC.getSelectedItemPosition()].getPrecio());
                 objetos.putSerializable("informacion", comicDatos);
 
                 CheckBox box1 = (CheckBox) findViewById(R.id.regalo);
@@ -151,7 +151,9 @@ public class PantallaEuropeo extends AppCompatActivity implements FragmentComics
                 box3.setVisibility(View.INVISIBLE);
                 BotonCompra.setVisibility(View.INVISIBLE);
                 BotonVolver.setVisibility(View.INVISIBLE);
-                spinnerEuropeo.setVisibility(View.INVISIBLE);
+                spinnerDC.setVisibility(View.INVISIBLE);
+
+
 
                 FragmentManager fragmentmanager =getFragmentManager();
 
@@ -160,11 +162,12 @@ public class PantallaEuropeo extends AppCompatActivity implements FragmentComics
                 FragmentComics fragment= new FragmentComics();
                 fragment.setArguments(objetos);
 
-                transaction.add(R.id.activity_pantalla_europeo,fragment);
+                transaction.add(R.id.activity_pantalla_dc,fragment);
 
                 transaction.commit();
 
             }
+
         });
     }
 
@@ -203,5 +206,6 @@ public class PantallaEuropeo extends AppCompatActivity implements FragmentComics
     }
     @Override
     public void onFragmentInteraction(Uri uri) {
+
     }
 }

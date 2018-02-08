@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //crear el enlace que al pulsar el boton vaya a registro
-                Intent irRegistro = new Intent(MainActivity.this,PantallaRegistro.class);
+                Intent irRegistro = new Intent(MainActivity.this,Registro.class);
                 startActivity(irRegistro);
             }
         });
@@ -63,10 +63,9 @@ public class MainActivity extends AppCompatActivity {
         BotonAcerca.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent volver = new Intent(MainActivity.this, AcercaDe.class);
-                startActivity(volver);
+                Intent irAcerca = new Intent(MainActivity.this, AcercaDe.class);
+                startActivity(irAcerca);
             }
         });
-
     }
 }
