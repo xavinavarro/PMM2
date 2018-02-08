@@ -63,7 +63,6 @@ public class FragmentComics extends Fragment {
         }
 
         radioButtons.setText(this.getArguments().getString("grupo"));
-
         aceptar.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -91,7 +90,6 @@ public class FragmentComics extends Fragment {
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
-
         }
     }
 
@@ -114,6 +112,4 @@ public class FragmentComics extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
-
 }
-

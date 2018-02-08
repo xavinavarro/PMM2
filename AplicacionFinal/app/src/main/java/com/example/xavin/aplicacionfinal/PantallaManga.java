@@ -37,10 +37,10 @@ public class PantallaManga extends AppCompatActivity implements FragmentComics.O
 
         usuarioCli = new UsuarioSQLiteHelper(this, "BDUsuario", null, 1);
         SQLiteDatabase bd = usuarioCli.getWritableDatabase();
-        //bd.execSQL("INSERT INTO Comics (Titulo, Genero, Precio) VALUES ('Berserk','Acción','20.95€')");
-        //bd.execSQL("INSERT INTO Comics (Titulo, Genero, Precio) VALUES ('Dragon Ball','Aventura','2.95€')");
+        bd.execSQL("INSERT INTO Comics (Titulo, Genero, Precio) VALUES ('One Piece ','Acción','20.95€')");
+        bd.execSQL("INSERT INTO Comics (Titulo, Genero, Precio) VALUES ('Dragon Ball','Aventura','2.95€')");
 
-        //Toast.makeText(getApplicationContext(),"completado",Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),"completado",Toast.LENGTH_LONG).show();
 
         String[] campos = new String[] {"Titulo", "Genero", "Precio"};
         Cursor c = bd.query("Comics", campos, null, null, null, null, null);

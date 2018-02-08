@@ -43,7 +43,6 @@
                 android:layout_height="47dp"
                 android:text="Extras: "
                 android:id="@+id/extras"/>
-
         </LinearLayout>
 
         <LinearLayout

@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.database.sqlite.SQLiteDatabase.*;
 
 /**
- * Created by xavin on 08/02/2018.
+ * Created by xavin on 01/02/2018.
  */
 
 public class UsuarioSQLiteHelper extends SQLiteOpenHelper {

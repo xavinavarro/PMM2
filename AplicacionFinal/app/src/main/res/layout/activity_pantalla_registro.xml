@@ -9,7 +9,8 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="@drawable/dead">
 
     <TextView
         android:text="Registro"

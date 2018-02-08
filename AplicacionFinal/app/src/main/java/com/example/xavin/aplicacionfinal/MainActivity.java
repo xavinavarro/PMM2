@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
                 //crear el enlace que al pulsar el boton vaya a registro
                 Intent irRegistro = new Intent(MainActivity.this,PantallaRegistro.class);
                 startActivity(irRegistro);
-                //C:\Users\juansergio\AppData\Local\Android\sdk\platform-tools
             }
         });
         BotonAceptar.setOnClickListener(new View.OnClickListener() {
