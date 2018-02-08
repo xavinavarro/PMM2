@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         final Button BotonRegistro = (Button) findViewById(R.id.BotonRegistro);
         final Button BotonAceptar = (Button) findViewById(R.id.BotonAceptar);
+        final Button BotonAcerca = (Button) findViewById(R.id.BotonAcerca);
         final EditText EntradaNombre = (EditText) findViewById(R.id.EntradaNombre);
         final EditText EntradaPassword = (EditText) findViewById(R.id.EntradaPassword);
 
@@ -59,9 +60,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        BotonAcerca.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent volver = new Intent(MainActivity.this, AcercaDe.class);
+                startActivity(volver);
+            }
+        });
 
     }
-
-
-
 }

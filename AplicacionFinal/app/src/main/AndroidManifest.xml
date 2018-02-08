@@ -25,7 +25,8 @@
         <activity android:name=".PantallaRegistro" />
         <activity android:name=".PantallaMarvel" />
         <activity android:name=".PantallaManga" />
-        <activity android:name=".PantallaClasicos"></activity>
+        <activity android:name=".PantallaClasicos" />
+        <activity android:name=".AcercaDe"></activity>
     </application>
 
 </manifest>
