@@ -101,9 +101,9 @@ public class Marvel extends AppCompatActivity implements FragmentComics.OnFragme
                         comics[spinnerMarvel.getSelectedItemPosition()].getPrecio());
                 objetos.putSerializable("informacion", comicDatos);
 
-                CheckBox box1 = (CheckBox) findViewById(R.id.regalo);
+                CheckBox box1 = (CheckBox) findViewById(R.id.normal);
                 CheckBox box2 = (CheckBox) findViewById(R.id.subscripcion);
-                CheckBox box3 = (CheckBox) findViewById(R.id.figura);
+                CheckBox box3 = (CheckBox) findViewById(R.id.coleccionista);
 
                 RadioButton efectivo = (RadioButton) findViewById(R.id.efectivo);
                 RadioButton paypal = (RadioButton) findViewById(R.id.paypal);
@@ -119,7 +119,7 @@ public class Marvel extends AppCompatActivity implements FragmentComics.OnFragme
                 }
 
                 objetos.putBoolean("boolean1",selected1);
-                objetos.putString("regalo",box1.getText().toString());
+                objetos.putString("normal",box1.getText().toString());
 
                 if (box2.isChecked()){
                     selected2 = true;
@@ -131,7 +131,7 @@ public class Marvel extends AppCompatActivity implements FragmentComics.OnFragme
                     selected3 = true;
                 }
                 objetos.putBoolean("boolean3",selected3);
-                objetos.putString("figura",box2.getText().toString());
+                objetos.putString("coleccionista",box2.getText().toString());
 
                 if (radioGroup.getCheckedRadioButtonId()==R.id.efectivo){
                     objetos.putString("grupo",efectivo.getText().toString());

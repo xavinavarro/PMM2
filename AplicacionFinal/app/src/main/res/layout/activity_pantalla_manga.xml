@@ -18,28 +18,28 @@
         android:layout_height="250px" />
 
     <CheckBox
-        android:text="Para regalo"
+        android:text="Ed. Normal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="22dp"
-        android:id="@+id/regalo"
+        android:id="@+id/normal"
         android:layout_below="@+id/imageManga"
         android:layout_marginTop="370px"
         android:layout_alignParentEnd="true" />
 
     <CheckBox
-        android:text="Subscripción"
+        android:text="Suscripción"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/subscripcion"
-        android:layout_below="@+id/regalo"
-        android:layout_alignStart="@+id/regalo" />
+        android:layout_below="@+id/normal"
+        android:layout_alignStart="@+id/normal" />
 
     <CheckBox
-        android:text="Figura"
+        android:text="Ed. Coleccionista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/figura"
+        android:id="@+id/coleccionista"
         android:layout_below="@+id/subscripcion"
         android:layout_alignStart="@+id/subscripcion" />
 
@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:id="@+id/radioGroup"
-        android:layout_alignTop="@+id/regalo"
+        android:layout_alignTop="@+id/normal"
         android:layout_alignParentStart="true">
 
         <RadioButton
@@ -60,18 +60,19 @@
             android:layout_weight="1" />
 
         <RadioButton
+            android:text="Tarjeta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tarjeta"
+            android:layout_weight="1" />
+
+        <RadioButton
             android:text="PayPal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/paypal"
             android:layout_weight="1" />
 
-        <RadioButton
-            android:text="Tarjeta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tarjeta"
-            android:layout_weight="1" />
     </RadioGroup>
 
     <Button
@@ -89,7 +90,7 @@
         android:id="@+id/botonCompra"
         android:layout_alignBaseline="@+id/BotonVolver"
         android:layout_alignBottom="@+id/BotonVolver"
-        android:layout_alignStart="@+id/figura" />
+        android:layout_alignStart="@+id/coleccionista" />
 
     <Spinner
         android:layout_width="match_parent"

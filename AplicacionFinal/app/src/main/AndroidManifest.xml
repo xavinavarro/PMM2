@@ -17,7 +17,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".DetectiveComics" />
-        <activity android:name=".ComicsEuropeos" />
         <activity android:name=".FragmentComics" />
         <activity android:name=".Comic" />
         <activity android:name=".Aplicacion" />

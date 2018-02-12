@@ -13,7 +13,6 @@
     android:background="@drawable/dead"
     >
 
-
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="190dp"
@@ -27,28 +26,16 @@
         android:layout_height="match_parent">
 
         <Button
-            android:text="DC"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/BotonDC" />
-
-        <Button
             android:text="Marvel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/BotonMarvel" />
 
         <Button
-            android:text="Manga"
+            android:text="Detective Comics"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/BotonManga" />
-
-        <Button
-            android:text="Europeo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/BotonEuropeo" />
+            android:id="@+id/BotonDC" />
 
         <Button
             android:text="Clásicos"
@@ -57,9 +44,17 @@
             android:id="@+id/BotonClasicos" />
 
         <Button
+            android:text="Manga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/BotonManga" />
+
+        <Button
             android:text="WEB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/BotonWeb" />
+
     </LinearLayout>
+
 </LinearLayout>
