@@ -76,20 +76,5 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="137dp"
-        android:layout_marginTop="50dp">
-
-        <Button
-            android:id="@+id/BotonAcerca"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginLeft="150dp"
-            android:text="Acerca De" />
-
-    </LinearLayout>
-
 
 </LinearLayout>

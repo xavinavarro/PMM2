@@ -5,6 +5,10 @@ package com.example.xavin.aplicacionfinal;
     import android.support.v7.app.AppCompatActivity;
     import android.content.Intent;
     import android.os.Bundle;
+    import android.view.ContextMenu;
+    import android.view.Menu;
+    import android.view.MenuInflater;
+    import android.view.MenuItem;
     import android.view.View;
     import android.widget.Button;
     import android.widget.EditText;
@@ -15,13 +19,33 @@ public class MainActivity extends AppCompatActivity {
     private UsuarioSQLiteHelper usuarioCli;
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.new_item:
+                Intent acerca = new Intent(MainActivity.this, AcercaDe.class);
+                startActivity(acerca);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         final Button BotonRegistro = (Button) findViewById(R.id.BotonRegistro);
         final Button BotonAceptar = (Button) findViewById(R.id.BotonAceptar);
-        final Button BotonAcerca = (Button) findViewById(R.id.BotonAcerca);
         final EditText EntradaNombre = (EditText) findViewById(R.id.EntradaNombre);
         final EditText EntradaPassword = (EditText) findViewById(R.id.EntradaPassword);
 
@@ -57,14 +81,6 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                     Toast.makeText(getApplicationContext(),"ERROR en la base de datos", Toast.LENGTH_LONG).show();
                 }
-            }
-        });
-
-        BotonAcerca.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent irAcerca = new Intent(MainActivity.this, AcercaDe.class);
-                startActivity(irAcerca);
             }
         });
     }
